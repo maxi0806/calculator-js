@@ -1,64 +1,74 @@
 body {
     text-align: center;
     margin: 0;
-    background: beige;
+    background: black;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
 }
 
-#calculator{
-    max-width: 360px;
-    background-color: rgb(83, 83, 83);
-    border-radius: 10px;
+#calculator {
+    max-width: 320px;
+    background-color: black;
+    border-radius: 20px;
     padding: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    display: grid;
+    grid-template-columns: repeat(4, 70px);
+    gap: 15px;
 }
 
 #display {
-    width: 100%;
-    height: 56px;
-    font-size: 20px;
+    grid-column: span 4;
+    height: 80px;
+    font-size: 3rem;
     text-align: right;
-    margin-bottom: 10px;
     padding: 20px;
-    border-radius: 5px;
+    margin-bottom: 10px;
+    border-radius: 10px;
     color: white;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: black;
     border: none;
     box-sizing: border-box;
 }
 
-.operator {
-    color: rgb(57, 255, 84);
-}
-
-#ac {
-    color: rgb(255, 0, 0);
-}
-
-.equal {
-    width: calc(50% - 10px);
-}
-
 button {
-    width: calc(25% - 10px);
-    height: 50px;
-    font-size: 20px;
-    margin: 10px 5px;
-    border-radius: 5px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    font-size: 24px;
     border: none;
-    float: left;
+    background-color: #333;
     color: white;
-    background-color: rgb(39, 39, 39);
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 button:hover {
-    cursor: pointer;
+    filter: brightness(1.2);
 }
 
 button:active {
     transform: scale(1.05);
-    box-shadow: 0 24px 4px 1px rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.operator {
+    background-color: #f1a33c;
+    color: white;
+}
+
+#ac,
+.function {
+    background-color: #a5a5a5;
+    color: black;
+}
+
+.zero {
+    grid-column: span 2;
+    width: 100%;
+    border-radius: 40px;
+    text-align: left;
+    padding-left: 28px;
 }
